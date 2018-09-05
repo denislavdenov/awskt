@@ -1,0 +1,7 @@
+.DS_Store
+.terraform/
+variables.tf
+terraform.tfstate
+terraform.tfstate.backup
+/servers/.servers.tf.swo
+.kitchen/

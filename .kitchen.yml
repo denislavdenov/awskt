@@ -1,0 +1,26 @@
+---
+driver:
+  name: terraform
+
+provisioner:
+  name: terraform
+
+platforms:
+  - name: ubuntu
+
+transport:
+  name: ssh
+  ssh_key: "~/.ssh/id_rsa"
+
+verifier:
+  name: terraform
+  reporter: doc
+  groups:
+    - name: default
+      controls:
+       - check_pkg
+      hostnames: public_ip
+      username: ubuntu
+
+suites:
+  - name: default
