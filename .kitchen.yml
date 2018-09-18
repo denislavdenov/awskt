@@ -14,8 +14,7 @@ verifier:
     - name: default
       backend: ssh
       user: ubuntu
-      hosts:
-        - 52.206.96.214
+      hosts_output: public_ip
       key_files:
         - ~/.ssh/id_rsa
       controls:
