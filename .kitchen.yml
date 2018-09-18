@@ -7,20 +7,19 @@ provisioner:
 
 platforms:
   - name: ubuntu
-
-transport:
-  name: ssh
-  ssh_key: "~/.ssh/id_rsa"
-
+ 
 verifier:
   name: terraform
-  reporter: doc
-  groups:
+  systems:
     - name: default
+      backend: ssh
+      user: ubuntu
+      hosts:
+        - 52.206.96.214
+      key_files:
+        - ~/.ssh/id_rsa
       controls:
-       - check_pkg
-      hostnames: public_ip
-      username: ubuntu
+      - check_pkg
 
 suites:
   - name: default
