@@ -19,6 +19,7 @@ verifier:
         - ~/.ssh/id_rsa
       controls:
       - check_pkg
+      - operating_system
 
 suites:
   - name: default
